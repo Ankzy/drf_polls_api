@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "title": "Questionnaire",
+        "start_datetime": "2021-02-08T18:40:19.781247Z",
+        "end_datetime": "2021-02-19T18:00:00Z",
+        "description": "Some questions about respondent.",
+        "questions": [
+            {
+                "id": 1,
+                "title": "What is your name?",
+                "type": "TEXT",
+                "options": []
+            },
+            {
+                "id": 2,
+                "title": "How old are you?",
+                "type": "SNGL",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Under 18"
+                    },
+                    {
+                        "id": 2,
+                        "text": "18-29"
+                    },
+                    {
+                        "id": 3,
+                        "text": "30-50"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Over 50"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "title": "What are your hobbies?",
+                "type": "MULT",
+                "options": [
+                    {
+                        "id": 5,
+                        "text": "Programming"
+                    },
+                    {
+                        "id": 6,
+                        "text": "Sport"
+                    },
+                    {
+                        "id": 7,
+                        "text": "Video games"
+                    },
+                    {
+                        "id": 8,
+                        "text": "Music"
+                    }
+                ]
+            }
+        ]
+    }
+]

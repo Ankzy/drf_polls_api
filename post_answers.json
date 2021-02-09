@@ -1,0 +1,25 @@
+[
+    {
+        "poll": 1,
+        "user": 1,
+        "question": 1,
+        "choice_id": null,
+        "text": "Boris"
+    },
+
+    {
+        "poll": 1,
+        "user": 1,
+        "question": 2,
+        "choice_id": 2,
+        "text": null
+    },
+
+    {
+        "poll": 1,
+        "user": 1,
+        "question": 3,
+        "choice_id": [5, 6, 8],
+        "text": null
+    }
+]

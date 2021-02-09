@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "title": "Questionnaire",
+        "start_datetime": "2021-02-08T18:40:19.781247Z",
+        "end_datetime": "2021-02-19T18:00:00Z",
+        "description": "Some questions about respondent.",
+        "questions": [
+            {
+                "title": "What is your name?",
+                "type": "TEXT",
+                "completed_answer": [
+                    {
+                        "user": 1,
+                        "text": "Boris",
+                        "choice": null
+                    }
+                ]
+            },
+            {
+                "title": "How old are you?",
+                "type": "SNGL",
+                "completed_answer": [
+                    {
+                        "user": 1,
+                        "text": null,
+                        "choice": {
+                            "id": 2,
+                            "text": "18-29"
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "What are your hobbies?",
+                "type": "MULT",
+                "completed_answer": [
+                    {
+                        "user": 1,
+                        "text": null,
+                        "choice": {
+                            "id": 5,
+                            "text": "Programming"
+                        }
+                    },
+                    {
+                        "user": 1,
+                        "text": null,
+                        "choice": {
+                            "id": 6,
+                            "text": "Sport"
+                        }
+                    },
+                    {
+                        "user": 1,
+                        "text": null,
+                        "choice": {
+                            "id": 8,
+                            "text": "Music"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
