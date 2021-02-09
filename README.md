@@ -25,7 +25,7 @@
 
 1. Клонируйте репозиторий: 
 
-    `git clone`
+    `git clone https://github.com/Ankzy/drf_polls_api.git`
 2. Установите необходимые библиотеки:
 
     `pip install -r requirements.txt`
