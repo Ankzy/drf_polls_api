@@ -33,9 +33,7 @@
 
     `cd polls`
  
-    `python manage.py makemigrations`
- 
-    `python manage.py migrate`
+    `python manage.py migrate --run-syncdb`
 4. Создайте администратора:
     
     `python manage.py createsuperuser`
