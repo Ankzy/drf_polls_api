@@ -45,5 +45,5 @@ class Answer(models.Model):
     text = models.CharField(max_length=1000, blank=True, null=True)
 
     class Meta:
-        unique_together = (('user', 'choice', 'question'))
+        unique_together = ('user', 'choice', 'question')
 

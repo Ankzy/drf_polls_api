@@ -1,9 +1,8 @@
 from .models import Answer, Question, Option
 
 def question_already_answered(data):
-    for answer in data:
-        if Answer.objects.filter(question__id=answer['question'], user=answer['user']):
-            return (answer['user'], answer['question'])
+    if Answer.objects.filter(question__id=data['question'], user=data['user']):
+            return (data['user'], data['question'])
     return False
 
 def more_than_one_answer_to_same(data):

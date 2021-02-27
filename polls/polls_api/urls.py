@@ -1,9 +1,11 @@
-from django.urls import path
-from .views import PollsView, AnswersView
+from rest_framework.routers import DefaultRouter
+from .views import PollsView, CompletedPollsView, AnswersView
 
 
 
-urlpatterns = [
-    path('polls/', PollsView.as_view()),
-    path('answers/<int:pk>', AnswersView.as_view())
-]
+router = DefaultRouter()
+router.register(r'polls', PollsView, 'Polls')
+router.register(r'completed-polls', CompletedPollsView, 'CompletedPolls')
+router.register(r'answers', AnswersView, 'Answers')
+
+urlpatterns = router.urls

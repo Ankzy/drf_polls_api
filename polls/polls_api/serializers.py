@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Poll, Answer, Question, Option
-
+from .custom_validators import question_already_answered, more_than_one_answer_to_same, different_users, \
+    choice_custom_validator, poll_question_conformity
 
 class OptionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,6 +28,27 @@ class PostAnswerSerializer(serializers.ModelSerializer):
         fields = ('user', 'poll', 'question', 'choice_id', 'text')
 
     def create(self, validated_data):
+
+        already_answered = question_already_answered(validated_data)
+        if already_answered is not False:
+            raise serializers.ValidationError({'error': 'User {} already answered question {}'.format(
+                already_answered[0], already_answered[1])})
+
+        if different_users(self.context):
+            raise serializers.ValidationError({'error': 'Answers from different users in one request'})
+
+        if more_than_one_answer_to_same(self.context):
+            raise serializers.ValidationError({'error': 'More than one answer to the same question'})
+
+        question_conformity = poll_question_conformity(self.context)
+        if question_conformity is not False:
+            raise serializers.ValidationError(question_conformity)
+
+        choice_valid = choice_custom_validator(self.context)
+        if choice_valid is not False:
+            raise serializers.ValidationError(choice_valid)
+
+
         user = validated_data['user']
         poll = Poll.objects.get(id=validated_data['poll'])
         question = Question.objects.get(id=validated_data['question'])
